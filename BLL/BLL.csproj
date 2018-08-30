@@ -5,6 +5,11 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Octokit" Version="0.31.0" />
+    <PackageReference Include="Octokit.Reactive" Version="0.31.0" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\DAO\DAO.csproj" />
   </ItemGroup>
 
