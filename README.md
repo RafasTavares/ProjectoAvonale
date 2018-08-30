@@ -1,7 +1,9 @@
 # ProjectoAvonale
 Primeira Atividade
 
-> 1) Vamos brincar com a API do github? Os requisitos para a sua solução são:
+### Projeto em MVC publicado no Azure. URL: [projeto-avonale-rafael.azurewebsites.net](projeto-avonale-rafael.azurewebsites.net)
+
+## 1) Vamos brincar com a API do github? Os requisitos para a sua solução são:
 
   1. Deve existir uma seção "Meus repositórios", onde é listado todos os repositórios do candidato (você, que está lendo isso agora).
   2. Deve existir uma seção onde o usuário pode procurar por repositórios do github utilizando como filtro nome ou parte do nome do repositório.
