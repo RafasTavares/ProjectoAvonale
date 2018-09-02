@@ -1,0 +1,23 @@
+﻿@{
+    ViewBag.Title = "Repositórios";
+}
+<h2>@ViewBag.Title.</h2>
+<h3>@ViewBag.Message</h3>
+
+<link rel="stylesheet" href="http://rafaeltavares.co/public/css/projects.css">
+
+<div id="proj-git" class="proj-git">
+    @if (ViewBag.Repositories != null)
+    {
+        foreach (var repo in ViewBag.Repositories)
+        {
+            <div class="github-repos" data-repo="@repo.full_name"></div>
+        }
+    }
+</div>
+
+
+<script src="http://rafaeltavares.co/public/js/jquery.github.repos.min.js"></script>
+<script>
+    $('.github-repos').githubRepos();
+</script>
