@@ -14,20 +14,32 @@ namespace DAO.services
     {
         private static readonly HttpClient client = new HttpClient();
 
-        #region GetRepositories
-        public string GetRepositories(string user = "RafasTavares")
+        private string RealizaConsulta(string metodo)
         {
-            string url = @"https://api.github.com/users/" + user + "/repos";
-            string json = "";
+            string urlBase = "https://api.github.com/";
 
-            HttpWebRequest request = WebRequest.Create(url) as HttpWebRequest;
+
+            HttpWebRequest request = WebRequest.Create(urlBase + metodo) as HttpWebRequest;
             request.UseDefaultCredentials = true;
-            request.Proxy.Credentials = System.Net.CredentialCache.DefaultCredentials;
+            request.Proxy.Credentials = CredentialCache.DefaultCredentials;
             request.UserAgent = "AppGit";
             HttpWebResponse response = request.GetResponse() as HttpWebResponse;
 
             StreamReader reader = new StreamReader(response.GetResponseStream());
-            return json = reader.ReadToEnd();
+            return reader.ReadToEnd();
+        }
+
+        #region ObterRepositorios
+        public string ObterRepositorios(string user = "RafasTavares")
+        {
+            return RealizaConsulta("users/" + user + "/repos");
+        }
+        #endregion
+
+        #region BuscarRepositorios
+        public string BuscarRepositorios(string nomeRepositorio)
+        {
+            return RealizaConsulta("search/repositories?q=" + nomeRepositorio);
         }
         #endregion
     }

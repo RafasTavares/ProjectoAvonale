@@ -5,13 +5,18 @@
 <h3>@ViewBag.Message</h3>
 
 <link rel="stylesheet" href="http://rafastavares.github.io/SitePessoal/public/css/projects.css">
-
+<style>
+    .github-box {
+        height: 99px !important;
+        max-height: 100px !important;
+    }
+</style>
 
 @if (ViewBag.Repositories != null)
 {
     <div id="proj-git" class="proj-git">
 
-          @foreach (var repo in ViewBag.Repositories)
+        @foreach (var repo in ViewBag.Repositories)
         {
             <div class="github-repos" data-repo="@(repo.full_name)"></div>
         }

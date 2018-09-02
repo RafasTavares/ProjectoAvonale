@@ -8,13 +8,16 @@ namespace BLL
     public class RepositoriosNegocio
     {
         #region ObterRepositorios
-        public string ObterRepositoriosAsync()
+        public string ObterRepositorios()
         {
-            var service = new GithubServices();
+            return new GithubServices().ObterRepositorios();
+        }
+        #endregion
 
-            return service.GetRepositories();
-
-
+        #region BuscarRepositorios
+        public string BuscarRepositorios(string nmRepositorio)
+        {
+            return new GithubServices().BuscarRepositorios(nmRepositorio);
         }
         #endregion
     }
