@@ -34,9 +34,9 @@
     </div>
 }
 
-<div>
+@*<div>
     @Html.ActionLink("Meus Repositórios", "Repositorios")
-</div>
+</div>*@
 
 @* ALTERAR PARA PARTIAL VIEW *@
 
@@ -73,7 +73,9 @@
         <h5> Consulte <a href="https://developer.github.com/v3/#rate-limiting">https://developer.github.com/v3/#rate-limiting</a>!</h5>
     }
 </fieldset>
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+@*<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>*@
 <script src="http://rafastavares.github.io/SitePessoal/public/js/jquery.github.repos.min.js"></script>
 <script>
     $('.github-repos').githubRepos();
