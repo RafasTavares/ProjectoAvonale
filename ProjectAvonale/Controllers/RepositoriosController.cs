@@ -11,7 +11,7 @@ namespace ProjectAvonale.Controllers
     {
 
         // GET: Repositorios
-        public ActionResult Index()
+        public ActionResult Repositorios()
         {
             try
             {

@@ -4,20 +4,27 @@
 <h2>@ViewBag.Title.</h2>
 <h3>@ViewBag.Message</h3>
 
-<link rel="stylesheet" href="http://rafaeltavares.co/public/css/projects.css">
+<link rel="stylesheet" href="http://rafastavares.github.io/SitePessoal/public/css/projects.css">
 
-<div id="proj-git" class="proj-git">
-    @if (ViewBag.Repositories != null)
-    {
-        foreach (var repo in ViewBag.Repositories)
+
+@if (ViewBag.Repositories != null)
+{
+    <div id="proj-git" class="proj-git">
+
+          @foreach (var repo in ViewBag.Repositories)
         {
-            <div class="github-repos" data-repo="@repo.full_name"></div>
+            <div class="github-repos" data-repo="@(repo.full_name)"></div>
         }
-    }
-</div>
-
-
-<script src="http://rafaeltavares.co/public/js/jquery.github.repos.min.js"></script>
+    </div>
+}
+else
+{
+    <h4>Nenhum Projeto foi encontrado ou o limite de requisições para a API sem autenticação do Github foi excedido. </h4>
+    <br>
+    <h5> Consulte <a href="https://developer.github.com/v3/#rate-limiting">https://developer.github.com/v3/#rate-limiting</a>!</h5>
+}
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="http://rafastavares.github.io/SitePessoal/public/js/jquery.github.repos.min.js"></script>
 <script>
     $('.github-repos').githubRepos();
 </script>
