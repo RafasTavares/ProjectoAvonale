@@ -18,7 +18,7 @@ GithubRepo.prototype.toHTML = function () {
         "<div class='github-box'>" +
         "<div class='github-box-header'>" +
         "<h3>" +
-        "<a href='" + this.url + "'>" + this.name + "</a>" +
+        "<a  href='  @Url.Action('DetalharRepositorio', 'RepositoriosController', " + this.name + ") '>" + this.name + "</a>" +
         "</h3>" +
         "<div class='github-stats'>" +
         "<a class='repo-stars' title='Stars' data-icon='7' href='" + this.url + "/stargazers'>" + this.stargazers + "</a>" +
