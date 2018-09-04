@@ -12,6 +12,13 @@ namespace ProjectAvonale.Models
         public string node_id { get; set; }
         public string name { get; set; }
         public string full_name { get; set; }
+        public string html_url { get; set; }
+        public string description { get; set; }
+        public int watchers_count { get; set; }
+        public string updated_at { get; set; }
+        public string default_branch { get; set; }
+        public int forks_count { get; set; }
+        public string forks_url { get; set; }
     }
 
 }
