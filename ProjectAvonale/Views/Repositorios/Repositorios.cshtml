@@ -21,30 +21,27 @@
 
             @foreach (var repo in ViewBag.Repositories)
             {
-                @*<div class="github-repos" data-repo="@(repo.full_name)"></div>*@
-
-                @*<div class="github-repos" data-repo="RafasTavares/12_SEMINFO">*@
-                    <div class="github-box">
-                        <div class="github-box-header">
-                            <h3>
-                                <a href="@Url.Action("DetalharRepositorio", "Repositorios")">
-                                    @(repo.name)
-                                </a>
-                            </h3>
-                            <div class="github-stats">
-                                <a class="repo-watchers" href="'@(repo.forks_url)'/watchers">@(repo.watchers_count)</a>
-                                <a class="repo-forks" href="'@(repo.forks_url)'">@(repo.forks_count)</a>
-                            </div>
-                        </div>
-                        <div class="github-box-content">
-                            <p>@(repo.description) — <a href="@(repo.html_url)/#readme">Ler mais</a></p>
-                        </div>
-                        <div class="github-box-download">
-                            <p class="repo-update">Ultimo commit no <strong>@(repo.default_branch)</strong> em @repo.updated_at)</p>
-                            <a class="repo-download" href="'@(repo.html_url)' + /zipball/ + '@(repo.default_branch)'">Baixar zip</a>
+                <div class="github-box">
+                    <div class="github-box-header">
+                        <h3>
+                            <a href="@Url.Action("DetalharRepositorio", "Repositorios")">
+                                @(repo.name)
+                            </a>
+                        </h3>
+                        <div class="github-stats">
+                            <a class="repo-watchers" href="'@(repo.forks_url)'/watchers">@(repo.watchers_count)</a>
+                            <a class="repo-forks" href="'@(repo.forks_url)'">@(repo.forks_count)</a>
                         </div>
                     </div>
+                    <div class="github-box-content">
+                        <p>@(repo.description) — <a href="@(repo.html_url)/#readme">Ler mais</a></p>
+                    </div>
+                    <div class="github-box-download">
+                        <p class="repo-update">Ultimo commit no <strong>@(repo.default_branch)</strong> em @repo.updated_at)</p>
+                        <a class="repo-download" href="'@(repo.html_url)' + /zipball/ + '@(repo.default_branch)'">Baixar zip</a>
+                    </div>
                 </div>
+
             }
         </div>
     }
