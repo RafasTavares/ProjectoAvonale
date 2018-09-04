@@ -1,4 +1,4 @@
-# ProjectoAvonale
+# ProjetoAvonale
 Primeira Atividade
 
 ### Projeto em MVC publicado no Azure. URL: [projeto-avonale-rafael.azurewebsites.net](projeto-avonale-rafael.azurewebsites.net)
