@@ -212,6 +212,8 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Repositorios\BuscarRepositorio.cshtml" />
     <Content Include="Views\Repositorios\DetalharRepositorio.cshtml" />
+    <Content Include="Views\Repositorios\Favoritos.cshtml" />
+    <Content Include="Views\Repositorios\_Repositorios.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

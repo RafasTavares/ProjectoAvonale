@@ -88,5 +88,12 @@ namespace ProjectAvonale.Controllers
             catch (Exception ex) { return View("BuscarRepositorio"); }
         }
         #endregion
+
+        #region CarregarFavoritos
+        public ActionResult CarregarFavoritos()
+        {
+            return View("Favoritos");
+        }
+        #endregion
     }
 }

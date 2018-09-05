@@ -1,0 +1,66 @@
+﻿@{
+
+    ViewBag.Title = "Repositórios";
+}
+<h2>@ViewBag.Title.</h2>
+<h3>@ViewBag.Message</h3>
+
+<link rel="stylesheet" href="http://rafastavares.github.io/SitePessoal/public/css/projects.css">
+<style>
+    .github-box {
+        height: 99px !important;
+        max-height: 100px !important;
+    }
+</style>
+<form id="fooForm" action="/DetalharRepositorio" method="post">
+    @if (ViewBag.Repositories != null)
+    {
+
+        <div id="proj-git" class="proj-git">
+
+            @foreach (var repo in ViewBag.Repositories)
+            {
+                <div class="github-box">
+                    <div class="github-box-header">
+                        <h3>
+                            <a href="@Url.Action("DetalharRepositorio", "Repositorios", new { fullNmRepositorio = repo.full_name } )">
+                                @(repo.name)
+                            </a>
+                        </h3>
+                        <div class="github-stats">
+                            <a class="repo-watchers" href="'@(repo.forks_url)'/watchers">@(repo.watchers_count)</a>
+                            <a class="repo-forks" href="'@(repo.forks_url)'">@(repo.forks_count)</a>
+                        </div>
+                    </div>
+                    <div class="github-box-content">
+                        <p>@(repo.description) — <a href="@(repo.html_url)/#readme">Ler mais</a></p>
+                    </div>
+                    <div class="github-box-download">
+                        <p class="repo-update">Ultimo commit no <strong>@(repo.default_branch)</strong> em @repo.updated_at)</p>
+                        <a class="repo-download" href="'@(repo.html_url)' + /zipball/ + '@(repo.default_branch)'">Baixar zip</a>
+                    </div>
+                </div>
+
+            }
+        </div>
+    }
+    else
+    {
+        <h4>Nenhum Projeto foi encontrado ou o limite de requisições para a API do Github foi excedido. </h4>
+        <br>
+        <h5> Consulte <a href="https://developer.github.com/v3/#rate-limiting">https://developer.github.com/v3/#rate-limiting</a>!</h5>
+    }
+</form>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+@*<script src="http://rafastavares.github.io/SitePessoal/public/js/jquery.github.repos.min.js"></script>*@
+
+@Scripts.Render("~/Content/js/jquery.github.js")
+<script>
+    $('.github-repos').githubRepos();
+
+    $(function () {
+        $('a#submit_link').click(function () {
+            $('form#fooForm').submit();
+        });
+    });
+</script>

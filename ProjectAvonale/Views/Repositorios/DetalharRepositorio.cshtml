@@ -36,7 +36,7 @@
 <div class="row">
     @{ foreach (var cont in Model.contribuidores)
         {
-            <div style="background-color:#BFBFBF; border-color: #808080;" class="col-lg-3">
+            <div style="background-color:#f0f0f0;border: 2px solid #bfbfbf;" class="col-lg-3">
                 <h5>
                     <img src="@(cont.avatar_url)" style="width:36px; height:36px;" />
                     <strong> @cont.login</strong>
@@ -52,7 +52,7 @@
 <div class="row">
     <div class="col-lg-12">
         <p>
-            @Html.ActionLink("Voltar para todos os repositórios", "Repositorios")
+            @Html.ActionLink("Voltar para busca", "BuscarRepositorio")
         </p>
     </div>
 </div>
