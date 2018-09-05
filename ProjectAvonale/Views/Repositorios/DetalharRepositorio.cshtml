@@ -1,0 +1,58 @@
+﻿@model ProjectAvonale.Models.RepositorioModel
+
+@{
+    ViewBag.Title = "DetalharRepositorio";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Detalhes do Repositório</h2>
+
+<div class="row">
+    <div class="col-lg-12">
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>Nome</dt>
+            <dd>
+                @Html.DisplayFor(model => model.name)
+            </dd>
+            <dt>Descrição</dt>
+            <dd>
+                @Html.DisplayFor(model => model.description)
+            </dd>
+            <dt>Linguagem</dt>
+            <dd>
+                @Html.DisplayFor(model => model.language)
+            </dd>
+            <dt> Última atualização</dt>
+            <dd>
+                @Html.DisplayFor(model => model.updated_at)
+            </dd>
+        </dl>
+    </div>
+</div>
+<hr />
+
+<h4>Contribuidores do repositório</h4>
+<div class="row">
+    @{ foreach (var cont in Model.contribuidores)
+        {
+            <div style="background-color:#BFBFBF; border-color: #808080;" class="col-lg-3">
+                <h5>
+                    <img src="@(cont.avatar_url)" style="width:36px; height:36px;" />
+                    <strong> @cont.login</strong>
+                </h5>
+                <p>@cont.contributions contribuições</p>
+            </div>
+        }
+    }
+
+</div>
+<br />
+<hr />
+<div class="row">
+    <div class="col-lg-12">
+        <p>
+            @Html.ActionLink("Voltar para todos os repositórios", "Repositorios")
+        </p>
+    </div>
+</div>

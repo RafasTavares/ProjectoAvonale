@@ -24,7 +24,7 @@
                 <div class="github-box">
                     <div class="github-box-header">
                         <h3>
-                            <a href="@Url.Action("DetalharRepositorio", "Repositorios")">
+                            <a href="@Url.Action("DetalharRepositorio", "Repositorios", new { fullNmRepositorio = repo.full_name } )">
                                 @(repo.name)
                             </a>
                         </h3>

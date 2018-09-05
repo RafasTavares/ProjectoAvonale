@@ -42,6 +42,22 @@ namespace DAO.services
             return RealizaConsulta("search/repositories?q=" + nomeRepositorio);
         }
         #endregion
+
+        #region DetalharRepositorio
+        public string DetalharRepositorio(string nomeRepositorio)
+        {
+            return RealizaConsulta("search/repositories?q=" + nomeRepositorio);
+        }
+        #endregion
+
+        #region BuscarContribuidores
+        public string BuscarContribuidores(string nomeRepositorio)
+        {
+            return RealizaConsulta("repos/" + nomeRepositorio + "/contributors");
+        }
+        #endregion
+
+
     }
 
 }

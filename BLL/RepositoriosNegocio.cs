@@ -20,5 +20,19 @@ namespace BLL
             return new GithubServices().BuscarRepositorios(nmRepositorio);
         }
         #endregion
+
+        #region DetalharRepositorio
+        public string DetalharRepositorio(string nmRepositorio)
+        {
+            return new GithubServices().DetalharRepositorio(nmRepositorio);
+        }
+        #endregion
+
+        #region BuscarContribuidores
+        public string BuscarContribuidores(string nmRepositorio)
+        {
+            return new GithubServices().BuscarContribuidores(nmRepositorio);
+        }
+        #endregion
     }
 }
