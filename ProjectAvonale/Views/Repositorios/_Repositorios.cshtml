@@ -15,7 +15,7 @@
 <form id="fooForm" action="/DetalharRepositorio" method="post">
     @if (ViewBag.Repositories != null)
     {
-
+        <p> Clique na <spam style="color:darkgoldenrod;">★</spam> para adicionar como favorito.</p>
         <div id="proj-git" class="proj-git">
 
             @foreach (var repo in ViewBag.Repositories)
@@ -25,6 +25,10 @@
                         <h3>
                             <a href="@Url.Action("DetalharRepositorio", "Repositorios", new { fullNmRepositorio = repo.full_name } )">
                                 @(repo.name)
+                            </a>
+
+                            <a href="@Url.Action("InserirFavorito", "Repositorios", repo )">
+                                &nbsp;-&nbsp; <spam style="color:darkgoldenrod;">★</spam>
                             </a>
                         </h3>
                         <div class="github-stats">
