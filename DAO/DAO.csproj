@@ -21,4 +21,10 @@
     <PackageReference Include="Octokit.Reactive" Version="0.31.0" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Update="Database1.mdf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
 </Project>
