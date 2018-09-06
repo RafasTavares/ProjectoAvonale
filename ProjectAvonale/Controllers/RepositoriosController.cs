@@ -98,22 +98,24 @@ namespace ProjectAvonale.Controllers
             var dt = new DbConnection().CarregarFavoritos();
 
             List<RepositorioModel> listModel = new List<RepositorioModel>();
-
-            foreach (DataRow row in dt.Rows)
+            if (dt != null)
             {
-                RepositorioModel model = new RepositorioModel();
+                foreach (DataRow row in dt.Rows)
+                {
+                    RepositorioModel model = new RepositorioModel();
 
-                model.id = Convert.ToInt32(row["id"].ToString());
-                model.name = row["name"].ToString();
-                model.full_name = row["full_name"].ToString();
-                model.html_url = row["html_url"].ToString();
-                model.description = row["description"].ToString();
-                model.forks_url = row["forks_url"].ToString();
-                model.watchers_count = Convert.ToInt32(row["watchers_count"].ToString());
-                model.updated_at = row["updated_at"].ToString();
-                model.default_branch = row["default_branch"].ToString();
+                    model.id = Convert.ToInt32(row["id"].ToString());
+                    model.name = row["name"].ToString();
+                    model.full_name = row["full_name"].ToString();
+                    model.html_url = row["html_url"].ToString();
+                    model.description = row["description"].ToString();
+                    model.forks_url = row["forks_url"].ToString();
+                    model.watchers_count = Convert.ToInt32(row["watchers_count"].ToString());
+                    model.updated_at = row["updated_at"].ToString();
+                    model.default_branch = row["default_branch"].ToString();
 
-                listModel.Add(model);
+                    listModel.Add(model);
+                }
             }
             ViewBag.Repositories = listModel;
             return View("Favoritos", listModel);

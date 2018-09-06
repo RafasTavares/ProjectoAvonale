@@ -10,7 +10,7 @@ namespace ProjectAvonale.Data
 {
     public class DbConnection
     {
-        private static string connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\rafas\source\repos\ProjectAvonale\DAO\Database1.mdf;Integrated Security=True";
+        private static string connectionString = @"Server=devrafasserver.database.windows.net;                                Initial Catalog=DbAvonale;                                Trusted_Connection=False;                                Encrypt=True;                                User ID=system; Password=Dev@123456;                                Trusted_Connection=False;                                ConnectRetryCount=0";
 
         public DataTable CarregarFavoritos()
         {
